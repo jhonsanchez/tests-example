@@ -3,6 +3,8 @@
  */
 package org.example;
 
+import java.util.concurrent.*;
+
 public class UnitTestApp {
     private static final String FRIDAY = "Friday";
     private final DayService dayService;
@@ -23,11 +25,21 @@ public class UnitTestApp {
         return isFriday(day);
     }
 
-
+    public String isFridayWithTimeout() {
+        ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor();
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(dayService::getDay, executor);
+        try {
+            String day = future.get(30, TimeUnit.SECONDS);
+            return isFriday(day);
+        } catch (Exception e) {
+            return "Nope";
+        }
+    }
     public static void main(String[] args) {
         DayService dayService = new DayService();
         UnitTestApp unitTestApp = new UnitTestApp(dayService);
         System.out.println(unitTestApp.isFriday());
         System.out.println(unitTestApp.isFriday());
     }
+
 }
