@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1731645309278,2,HTTP Request,200,,Thread Group 1-1,text,true,,175,166,1,1,http://localhost:8080/api/greeting,2,0,0
+1731645309378,2,HTTP Request,200,,Thread Group 1-2,text,true,,175,166,1,1,http://localhost:8080/api/greeting,2,0,1
+1731645309482,2,HTTP Request,200,,Thread Group 1-3,text,true,,175,166,1,1,http://localhost:8080/api/greeting,2,0,0
+1731645309581,3,HTTP Request,200,,Thread Group 1-4,text,true,,175,166,1,1,http://localhost:8080/api/greeting,3,0,1
+1731645309682,5,HTTP Request,200,,Thread Group 1-5,text,true,,175,166,1,1,http://localhost:8080/api/greeting,5,0,1
+1731645309783,6,HTTP Request,200,,Thread Group 1-6,text,true,,175,166,1,1,http://localhost:8080/api/greeting,6,0,2
+1731645309882,2,HTTP Request,200,,Thread Group 1-7,text,true,,175,166,1,1,http://localhost:8080/api/greeting,2,0,0
+1731645309983,2,HTTP Request,200,,Thread Group 1-8,text,true,,175,166,1,1,http://localhost:8080/api/greeting,2,0,0
+1731645310077,3,HTTP Request,200,,Thread Group 1-9,text,true,,175,166,1,1,http://localhost:8080/api/greeting,3,0,1
+1731645310180,4,HTTP Request,200,,Thread Group 1-10,text,true,,175,166,1,1,http://localhost:8080/api/greeting,4,0,1
