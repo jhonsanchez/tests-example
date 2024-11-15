@@ -8,6 +8,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
 }
 
 repositories {
@@ -16,10 +18,13 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
+    implementation libs.springboot.starter.web
+    implementation libs.springboot.starter.thymeleaf
+    testImplementation libs.springboot.starter.test
     testImplementation libs.junit.jupiter
     testImplementation libs.mockito.core
     testImplementation libs.mockito.junit.jupiter
+    testImplementation libs.playwright
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
