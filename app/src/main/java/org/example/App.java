@@ -4,6 +4,14 @@
 package org.example;
 
 public class App {
+    private static final String FRIDAY = "Friday";
+    public static String isFriday(String day) {
+        if(FRIDAY.equalsIgnoreCase(day)) {
+            return "TGIF!";
+        }
+        return "Nope";
+    }
+
     public String getGreeting() {
         return "Hello World!";
     }

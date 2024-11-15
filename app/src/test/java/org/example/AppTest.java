@@ -3,12 +3,25 @@
  */
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.example.App.isFriday;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+
+    @Test
+    void givenDayMonday_thenIsNotFriday() {
+        String day = "Monday";
+        String expectedResult = "Nope";
+        assertEquals(expectedResult, isFriday(day));
+    }
+
+    @Test
+    void givenDayFriday_thenTGIF() {
+        String day = "Friday";
+        String expectedResult = "TGIF!";
+        assertEquals(expectedResult, isFriday(day));
     }
 }
