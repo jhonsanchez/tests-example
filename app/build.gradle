@@ -8,8 +8,10 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
     id 'org.springframework.boot' version '3.3.5'
     id 'io.spring.dependency-management' version '1.1.6'
+    id "org.sonarqube" version "5.1.0.4882"
 }
 
 repositories {
@@ -39,6 +41,13 @@ java {
     }
 }
 
+sonar {
+    properties {
+        property "sonar.projectKey", "tests-example"
+        property "sonar.organization", "TargetSec"
+        property "sonar.host.url", "http://localhost:9000"
+    }
+}
 application {
     // Define the main class for the application.
     mainClass = 'org.example.App'
